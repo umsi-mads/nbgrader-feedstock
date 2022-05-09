@@ -1,0 +1,24 @@
+From d17200582de1ae21f305fc3324df5569addc9e8a Mon Sep 17 00:00:00 2001
+From: Jacob Evan Shreve <shreve@umich.edu>
+Date: Mon, 24 Jan 2022 10:40:44 -0500
+Subject: [PATCH] Make preprocessors configurable
+
+---
+ nbgrader/converters/generate_feedback.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/nbgrader/converters/generate_feedback.py b/nbgrader/converters/generate_feedback.py
+index fa4f0ed..7bb1459 100644
+--- a/nbgrader/converters/generate_feedback.py
++++ b/nbgrader/converters/generate_feedback.py
+@@ -22,7 +22,7 @@ class GenerateFeedback(BaseConverter):
+     preprocessors = List([
+         GetGrades,
+         CSSHTMLHeaderPreprocessor
+-    ])
++    ]).tag(config=True)
+
+     @default("classes")
+     def _classes_default(self):
+--
+2.34.1
