@@ -1,0 +1,25 @@
+From 4cbe047e14cde2c44e8a51b03b83992c25c6ff0e Mon Sep 17 00:00:00 2001
+From: Jacob Evan Shreve <shreve@umich.edu>
+Date: Mon, 9 May 2022 11:24:05 -0400
+Subject: [PATCH] Make generate_assignment preprocessors configurable
+
+---
+ nbgrader/converters/generate_assignment.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/nbgrader/converters/generate_assignment.py b/nbgrader/converters/generate_assignment.py
+index c690b0b4..bd21af6c 100644
+--- a/nbgrader/converters/generate_assignment.py
++++ b/nbgrader/converters/generate_assignment.py
+@@ -64,7 +64,7 @@ class GenerateAssignment(BaseConverter):
+         ClearMarkScheme,
+         ComputeChecksums,
+         CheckCellMetadata,
+-    ])
++    ]).tag(config=True)
+     # NB: ClearHiddenTests must come after ComputeChecksums and SaveCells.
+     # ComputerChecksums must come again after ClearHiddenTests.
+ 
+-- 
+2.35.1
+

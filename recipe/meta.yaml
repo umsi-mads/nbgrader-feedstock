@@ -8,7 +8,8 @@ source:
   url: https://github.com/jupyter/nbgrader/archive/v{{ version }}.tar.gz
   sha256: 09a6a79ea07867a844ab5b475e9784319dc441a5bd19ae71f8d853ae196b2180
   patches:
-    - enable_generate_feedback_preprocessors.patch
+    - configure_generate_feedback_preprocessors.patch
+    - configure_generate_assignment_preprocessors.patch
 
 build:
   number: 2
