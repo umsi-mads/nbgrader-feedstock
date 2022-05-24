@@ -12,7 +12,8 @@ source:
     - configure_generate_assignment_preprocessors.patch
 
 build:
-  number: 2
+  number: 0
+  string: umsimads
   # Cannot be noarch b/c of the post/pre scripts.
   script: {{ PYTHON }} -m pip install . --no-deps -vv
   entry_points:
